@@ -1,0 +1,11 @@
+<nav>
+    <collection label="Splunk for Bind DNS">
+		<a href="mailto:support@defensive-iss.com">Send Feedback...</a>
+		<a href="http://www.defensive-iss.com">Visit Defensive ISS</a>
+    </collection>
+	<view name="summary" default="true"/>
+	<view name="dashboard"/>
+	<view name="realtime" />
+	<view name="search" />
+	<view name="stats"/>
+</nav>

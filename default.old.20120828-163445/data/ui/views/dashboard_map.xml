@@ -1,0 +1,38 @@
+<view template="dashboard.html">
+  <label>Firewall Map view</label>
+  <module name="AccountBar" layoutPanel="appHeader"/>
+  <module name="AppBar" layoutPanel="navigationHeader"/>
+  <module name="Message" layoutPanel="messaging">
+    <param name="filter">*</param>
+    <param name="clearOnJobDispatch">False</param>
+    <param name="maxSize">1</param>
+  </module>
+  <module name="TitleBar" layoutPanel="viewHeader">
+    <param name="actionsMenuFilter">dashboard</param>
+  </module>  
+
+  <module name="ServerSideInclude" layoutPanel="panel_row1_col1">
+    <param name="src">ammap_description.html</param>
+  </module>
+  <module name="ServerSideInclude" layoutPanel="panel_row1_col1">
+    <param name="src">ammap.html</param>
+  </module>
+
+  <module name="TimeRangePicker" layoutPanel="panel_row2_col1">
+	  <param name="searchWhenChanged">true</param>
+	  <param name="default">7 days</param>
+	  <module name="HiddenSearch" group="" autoRun="True">
+		  <param name="search">eventtype="NetScreen" -00257 dst=* dst!=192.168.* dst!=10.* dst!=172.16.* dst!=0.0.* | stats count as _geo_count by dst | geoip dst</param>
+		  <module name="GoogleMaps">
+			  <param name="autoPostProcess">false</param>
+			  <param name="height">350</param>
+			  <param name="mapType">terrain</param>
+			  <param name="mapTypeControl">on</param>
+			  <param name="navigationControl">on</param>
+			  <param name="scaleControl">on</param>
+			  <param name="scrollwheel">on</param>
+		  </module>
+	  </module>
+  </module>
+
+</view>

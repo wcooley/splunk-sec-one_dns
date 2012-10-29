@@ -1,0 +1,6 @@
+<nav>
+    <collection label="Dashboards">
+        <view name="dashboard" default="true"/>
+        <view name="dashboard_map"/>
+    </collection>
+</nav>

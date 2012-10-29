@@ -1,0 +1,10 @@
+<nav>
+    <view name="NetScreen" default='true' />
+    <view name="event_search"/>
+    <collection label="Dashboards">
+        <view source="unclassified" match="dashboard"/>
+    </collection>
+  <collection label="Reports">
+    <saved source="unclassified" />
+  </collection>
+</nav>

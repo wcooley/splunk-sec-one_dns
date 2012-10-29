@@ -1,0 +1,168 @@
+<view template="dashboard.html">
+
+ <label>SEC-ONE DNS Activity Summary for Bind DNS Servers Dashboard</label>
+
+ <module name="AccountBar" layoutPanel="navigationHeader"/>
+
+ <module name="AppBar" layoutPanel="navigationHeader"/>
+
+ <module name="Message" layoutPanel="messaging">
+  <param name="filter">*</param>
+  <param name="clearOnJobDispatch">False</param>
+  <param name="maxSize">1</param>
+ </module>
+
+ <module name="TitleBar" layoutPanel="navigationHeader">
+  <param name="showActionsMenu">False</param>
+ </module>
+
+ <module name="TimeRangePicker" layoutPanel="panel_row2_col1" group="DNS Requests by DNS Server">
+	 <param name="searchWhenChanged">True</param>
+	 <param name="selected">Last 60 minutes</param>
+	 <module name="HiddenSavedSearch" autoRun="True">
+		 <param name="useHistory">false</param>
+		 <param name="savedSearch">DNS Event Over Time</param>
+		 <module name="EnablePreview">
+			 <param name="enable">true</param>
+			 <param name="display">false</param>
+			 <module name="HiddenChartFormatter">
+				 <param name="chart">area</param>
+				 <param name="chart.stackMode">default</param>
+				 <param name="primaryAxisTitle.text">Time</param>
+				 <param name="secondaryAxisTitle.text">Requests</param>
+				 <module name="FlashChart">
+					 <param name="height">300px</param>
+					 <module name="ViewRedirectorLink">
+						 <param name="viewTarget">flashtimeline</param>
+						 <param name="label">View full results</param>
+					 </module>
+				 </module>          
+			 </module>
+		 </module>
+	 </module>
+ </module> 
+ <module name="TimeRangePicker" layoutPanel="panel_row2_col2" group="Top 10 Domain Request">
+  <param name="searchWhenChanged">True</param>
+  <param name="selected">Last 60 minutes</param>
+  <module name="HiddenSavedSearch" autoRun="True">
+   <param name="useHistory">false</param>
+   <param name="savedSearch">Top 10 Domain Requested</param>
+   <module name="EnablePreview">
+    <param name="enable">true</param>
+    <param name="display">false</param>
+    <module name="HiddenChartFormatter">
+     <param name="chart">bar</param>
+	 <param name="legend.placement">none</param>
+	  <param name="primaryAxisTitle.text">Domains</param>
+	 <param name="secondaryAxisTitle.text">Requests</param>
+     <module name="FlashChart">
+      <param name="height">300px</param>
+      <module name="ViewRedirectorLink">
+       <param name="viewTarget">flashtimeline</param>
+       <param name="label">View full results</param>
+      </module>
+     </module>          
+    </module>
+   </module>
+  </module>
+ </module>
+ 
+ <module name="TimeRangePicker" layoutPanel="panel_row3_col1" group="Top 10 Client Requests">
+	 <param name="searchWhenChanged">True</param>
+	 <param name="selected">Last 60 minutes</param>
+	 <module name="HiddenSavedSearch" autoRun="True">
+		 <param name="useHistory">false</param>
+		 <param name="savedSearch">Top 10 Client Requesting</param>
+		 <module name="EnablePreview">
+			 <param name="enable">true</param>
+			 <param name="display">false</param>
+			 <module name="HiddenChartFormatter">
+				 <param name="chart">bar</param>
+	 <param name="legend.placement">none</param>
+	  <param name="primaryAxisTitle.text">Client IP</param>
+	 <param name="secondaryAxisTitle.text">Requests</param>
+				 <module name="FlashChart">
+					 <param name="height">300px</param>
+					 <module name="ViewRedirectorLink">
+						 <param name="viewTarget">flashtimeline</param>
+						 <param name="label">View full results</param>
+					 </module>
+				 </module>          
+			 </module>
+		 </module>
+	 </module>
+ </module>
+  <module name="TimeRangePicker" layoutPanel="panel_row3_col2" group="Top 20 Top Level Domains">
+	 <param name="searchWhenChanged">True</param>
+	 <param name="selected">Last 60 minutes</param>
+	 <module name="HiddenSavedSearch" autoRun="True">
+		 <param name="useHistory">false</param>
+		 <param name="savedSearch">Top 20 Top Level Domains</param>
+		 <module name="EnablePreview">
+			 <param name="enable">true</param>
+			 <param name="display">false</param>
+			 <module name="HiddenChartFormatter">
+				 <param name="chart">bar</param>
+				 <param name="primaryAxisTitle.text">Top Level Domains</param>
+				 <param name="secondaryAxisTitle.text">Requests</param>
+				 <module name="FlashChart">
+					 <param name="height">300px</param>
+					 <module name="ViewRedirectorLink">
+						 <param name="viewTarget">flashtimeline</param>
+						 <param name="label">View full results</param>
+					 </module>
+				 </module>          
+			 </module>
+		 </module>
+	 </module>
+ </module>
+ 
+ <module name="TimeRangePicker" layoutPanel="panel_row4_col1" group="DNS Transaction Type Summary">
+  <param name="searchWhenChanged">True</param>
+  <param name="selected">Last 60 minutes</param>
+  <module name="HiddenSavedSearch" autoRun="True">
+   <param name="useHistory">false</param>
+   <param name="savedSearch">DNS Transaction Type Summary</param>
+   <module name="EnablePreview">
+    <param name="enable">true</param>
+    <param name="display">false</param>
+    <module name="HiddenChartFormatter">
+     <param name="chart">pie</param>
+     <module name="FlashChart">
+      <param name="height">300px</param>
+      <module name="ViewRedirectorLink">
+       <param name="viewTarget">flashtimeline</param>
+       <param name="label">View full results</param>
+      </module>
+     </module>          
+    </module>
+   </module>
+  </module>
+ </module>
+<module name="TimeRangePicker" layoutPanel="panel_row4_col2" group="DNS Records Purged">
+	 <param name="searchWhenChanged">True</param>
+	 <param name="selected">Last 60 minutes</param>
+	 <module name="HiddenSavedSearch" autoRun="True">
+		 <param name="useHistory">false</param>
+		 <param name="savedSearch">Deleted DNS Cache Over time</param>
+		 <module name="EnablePreview">
+			 <param name="enable">true</param>
+			 <param name="display">false</param>
+			 <module name="HiddenChartFormatter">
+				 <param name="chart">line</param>
+				 <param name="chart.stackMode">stacked</param>
+				 <param name="primaryAxisTitle.text">Time</param>
+				 <param name="secondaryAxisTitle.text">Deleted Transaction</param>
+				 <module name="FlashChart">
+					 <param name="height">300px</param>
+					 <module name="ViewRedirectorLink">
+						 <param name="viewTarget">flashtimeline</param>
+						 <param name="label">View full results</param>
+					 </module>
+				 </module>          
+			 </module>
+		 </module>
+	 </module>
+ </module>
+
+</view>

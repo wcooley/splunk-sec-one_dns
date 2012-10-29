@@ -1,0 +1,90 @@
+<view template="dashboard.html">
+	<label>Activity Summary</label>
+	<module name="AccountBar" layoutPanel="navigationHeader"/>
+	<module name="AppBar" layoutPanel="navigationHeader"/>
+	<module name="Message" layoutPanel="messaging">
+		<param name="filter">*</param>
+		<param name="clearOnJobDispatch">False</param>
+		<param name="maxSize">1</param>
+	</module>
+	<module name="TitleBar" layoutPanel="navigationHeader">
+		<param name="showActionsMenu">False</param>
+	</module>
+	<module name="TimeRangePicker" layoutPanel="panel_row2_col1" group="Top 10 Domain Request">
+		<param name="searchWhenChanged">True</param>
+		<param name="selected">Last 60 minutes</param>
+		<module name="HiddenSavedSearch" autoRun="True">
+			<param name="useHistory">false</param>
+			<param name="savedSearch">Top 10 Domain Requested</param>
+			<module name="JobProgressIndicator"></module>
+			<module name="EnablePreview">
+				<param name="enable">true</param>
+				<param name="display">false</param>
+				<module name="HiddenChartFormatter">
+					<param name="chart">bar</param>
+					<param name="legend.placement">none</param>
+					<param name="primaryAxisTitle.text">Domains</param>
+					<param name="secondaryAxisTitle.text">Requests</param>
+					<module name="FlashChart">
+						<param name="height">300px</param>
+						<module name="ConvertToDrilldownSearch">
+							<module name="ViewRedirector">
+								<param name="viewTarget">flashtimeline</param>
+							</module>
+						</module>
+					</module>          
+				</module>
+			</module>
+		</module>
+	</module>
+	<module name="TimeRangePicker" layoutPanel="panel_row2_col2" group="Top 10 Top Level Domains">
+		<param name="searchWhenChanged">True</param>
+		<param name="selected">Last 60 minutes</param>
+		<module name="HiddenSavedSearch" autoRun="True">
+			<param name="useHistory">false</param>
+			<param name="savedSearch">Top 10 Top Level Domains</param>
+			<module name="JobProgressIndicator"></module>
+			<module name="EnablePreview">
+				<param name="enable">true</param>
+				<param name="display">false</param>
+				<module name="HiddenChartFormatter">
+					<param name="chart">bar</param>
+					<param name="legend.placement">none</param>
+					<param name="primaryAxisTitle.text">Top Level Domains</param>
+					<param name="secondaryAxisTitle.text">Requests</param>
+					<module name="FlashChart">
+						<param name="height">300px</param>
+						<module name="ConvertToDrilldownSearch">
+							<module name="ViewRedirector">
+								<param name="viewTarget">flashtimeline</param>
+							</module>
+						</module>
+					</module>          
+				</module>
+			</module>
+		</module>
+	</module>
+	<module name="TimeRangePicker" layoutPanel="panel_row3_col1" group="DNS Request Activity">
+		<param name="searchWhenChanged">True</param>
+		<param name="selected">Last 60 minutes</param>
+		<module name="HiddenSavedSearch" autoRun="True">
+			<param name="useHistory">false</param>
+			<param name="savedSearch">DNS Query Log</param>
+			<module name="JobProgressIndicator"></module>
+			<module name="Paginator">
+				<param name="count">15</param>
+				<param name="maxPages">15</param>
+				<param name="entityName">results</param>	
+				<module name="SimpleResultsTable">
+					<param name="drilldown">row</param>		
+					<module name="ConvertToDrilldownSearch">
+						<module name="ViewRedirector">
+							<param name="viewTarget">flashtimeline</param>
+						</module>
+					</module>	
+				</module>					
+			</module>
+		</module>
+	</module>
+
+</view>
